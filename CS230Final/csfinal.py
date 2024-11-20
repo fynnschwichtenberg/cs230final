@@ -39,7 +39,7 @@ BOSTON_COORDS = (42.3601, -71.0589)
 
 # Load New England airports data
 def read_ne_airport():
-    df = pd.read_csv("/Users/fynn/Documents/MY/CS 230/Final/data/new_england_airports.csv").set_index("id")
+    df = pd.read_csv("data/new_england_airports.csv").set_index("id")
     df = df.loc[
         df["iso_region"].isin(["US-MA", "US-CT", "US-RI", "US-NH", "US-VT", "US-ME"])
     ]
@@ -232,7 +232,7 @@ def main():
 
     # Load datasets
     airports = read_ne_airport()
-    airbnb_data = read_airbnb("/Users/fynn/Documents/MY/CS 230/CS230Final/data/boston-airbnb/listings.csv")
+    airbnb_data = read_airbnb("data/boston-airbnb/listings.csv")
 
     # Sidebar filters
     selected_types, price_range = sidebar_filters(airbnb_data)
